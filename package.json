@@ -1,0 +1,25 @@
+{
+  "name": "my-simple-dash",
+  "version": "0.0.1",
+  "description": "A simple dashboard web app for internal use",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gsam1/my-simple-dash.git"
+  },
+  "author": "Georgi Samardzhiev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gsam1/my-simple-dash/issues"
+  },
+  "homepage": "https://github.com/gsam1/my-simple-dash#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.7",
+    "morgan": "^1.7.0"
+  }
+}
