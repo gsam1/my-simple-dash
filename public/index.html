@@ -1,5 +1,18 @@
 <html>
-    <head>
-        <h1> HELLO WOORLD!</h1>
-    </head>
+  <head>
+    <!-- CSS Below -->
+
+  </head>
+  <body>
+    <div id="app">
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+    </div>
+    <!-- JS Below -->
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
