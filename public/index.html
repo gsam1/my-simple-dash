@@ -5,13 +5,14 @@
   </head>
   <body>
     <div id="app">
-      <ol>
+      <ul>
         <li v-for="todo in todos">
           {{ todo.text }}
         </li>
-      </ol>
+      </ul>
     </div>
     <!-- JS Below -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
     <script src="app.js"></script>
   </body>

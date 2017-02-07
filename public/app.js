@@ -2,26 +2,30 @@ var app = new Vue({
   // Target id app
   el: '#app',
   // Data stuff
+
   data: {
-    todo: {text:'', done:''},
     todos: []
   },
+
   // onReady
-  ready: function() {
+  created: function() {
+    // this.testTest();
     this.getTodos();
   },
+
   // Connected Methods
   methods: {
     getTodos: function () {
-      var todos = [];
-      this.$http.get('/api/todos')
-        .success( function(todos) {
-          this.$set('todos', todos)
-          console.log(todos);
+      var self = this;
+      axios.get('/api/todos')
+        .then(function(response) {
+          console.log('before ' + this.todos);
+          self.todos = response.data;
+          console.log('after ' + this.todos);
         })
-        .error( function(err) {
-          console.log(err);
-        })
+        .catch(function(error) {
+          console.log(error);
+        });
     }
   }
 })
