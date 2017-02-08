@@ -1,15 +1,20 @@
 <html>
   <head>
     <!-- CSS Below -->
-
+    <link rel="stylesheet" href="style.css">
+      <!-- Font Awesome cause awesome -->
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   </head>
   <body>
-    <div id="app">
-      <ul>
-        <li v-for="todo in todos">
-          {{ todo.text }}
+    <div id="todoApp">
+      <ul class="todoApp">
+        <!-- Verbose Vue... trying to learn here -->
+        <li v-bind:class=" { done: todo.done }" v-for="todo in todos">
+          <input type="checkbox" id="todoCheck" v-bind:value="{ done: todo.text }" v-model="doneTodos">
+          <label for="todoCheck">{{ todo.text }}</label>
         </li>
       </ul>
+      <span>Checked todos: {{ doneTodos }} </span>
     </div>
     <!-- JS Below -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

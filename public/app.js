@@ -1,10 +1,11 @@
 var app = new Vue({
   // Target id app
-  el: '#app',
+  el: '#todoApp',
   // Data stuff
 
   data: {
-    todos: []
+    todos: [],
+    doneTodos: []
   },
 
   // onReady
@@ -19,9 +20,7 @@ var app = new Vue({
       var self = this;
       axios.get('/api/todos')
         .then(function(response) {
-          console.log('before ' + this.todos);
           self.todos = response.data;
-          console.log('after ' + this.todos);
         })
         .catch(function(error) {
           console.log(error);
