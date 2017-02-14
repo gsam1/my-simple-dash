@@ -5,11 +5,12 @@ var app = new Vue({
 
   data: {
     todos: [],
-    doneTodos: []
+    // todosDone: []
+    newTodo: ""
   },
 
   // onReady
-  created: function() {
+  created: function () {
     // this.testTest();
     this.getTodos();
   },
@@ -18,13 +19,33 @@ var app = new Vue({
   methods: {
     getTodos: function () {
       var self = this;
+      // The get all todos.
       axios.get('/api/todos')
-        .then(function(response) {
+        .then( function (response) {
           self.todos = response.data;
         })
-        .catch(function(error) {
+        .catch( function (error) {
           console.log(error);
         });
+    },
+    changeStateTodo: function (todo) {
+      // A little bit clunky but it works.
+      if ( todo.done == false ) {
+        todo.done = true;
+      } else if ( todo.done == true ){
+        todo.done = false;
+      } else {
+        console.log('errror');
+      }
+      // Uncomment bellow for debugging
+      // console.log(todo._id + " changed with state: " + todo.done);
+      axios.put('/api/todos/' + todo._id, { done: todo.done })
+        .then ( function (response) {
+          console.log(response);
+        })
+        .catch( function (error) {
+          console.log(error);
+        })
     }
   }
 })
