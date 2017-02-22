@@ -1,6 +1,21 @@
+.flex1 {
+  display: inline-flex;
+}
+.flex1 {
+  display: inline-flex;
+}
+.box {
+  background-color: #ff8263;
+  margin: 8px;
+  border: 3px solid red;
+}
 .todoApp {
   list-style-type: none;
 }
 .done {
   text-decoration: line-through;
+}
+
+#netmon2 {
+  align-self: stretch;
 }
