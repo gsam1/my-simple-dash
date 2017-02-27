@@ -14,7 +14,18 @@ var app = new Vue({
     // this.testTest();
     this.getTodos();
   },
-
+  // Computed properties
+  computed: {
+    completedTodos: function() {
+      var count = 0;
+      this.todos.forEach(function(todo){
+        if (todo.done == true) {
+          count += 1;
+        }
+      })
+      return count;
+    }
+  },
   // Connected Methods
   methods: {
     getTodos: function () {
