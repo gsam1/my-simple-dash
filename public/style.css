@@ -3,6 +3,13 @@
   margin: 8px;
   border: 3px solid green;
 }
+.newTodo {
+  /*Empty class for me being lazy*/
+}
+.todos {
+  background-color: #ff3148;
+  border: 2px solid blue;
+}
 
 .box2 {
   background-color: #ff0063;

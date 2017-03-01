@@ -9,13 +9,16 @@
     <div class="row">
       <div class="col-xs-8">
         <div class="row">
-          <div id="weather-time" class="box col-xs-6">
+          <div id="weather-time" class="box col-xs-5">
             <!-- Weather placeholder -->
             <p>
-              This is just a weather-time placeholder!
+              <iframe id="forecast_embed" type="text/html" frameborder="0" height="245"
+                                                                          width="100%"
+                src="http://forecast.io/embed/#lat=42.812792&lon=23.1934193&name=Sofia&units=ca">
+              </iframe>
             </p>
           </div>
-          <div id="calendar" class="box col-xs-5">
+          <div id="calendar" class="box col-xs-6">
             <!-- Calendar placeholder -->
             <p>
               This is just a calendar placeholder!
@@ -23,21 +26,24 @@
           </div>
       </div>
       <div class="row">
-        <div id="todoApp" class="box col-xs-6">
+        <div id="todoApp" class="box col-xs-5">
           <p>
             Completed todos: {{ completedTodos }}
           </p>
-          <ul class="todoApp">
+          <ul class="todoApp todos">
             <!-- Verbose Vue... trying to learn here -->
             <li v-bind:class=" { done: todo.done }" v-for="todo in todos">
-              <input type="checkbox" v-bind:value="{ done: todo.text }" v-on:change="changeStateTodo(todo)" >
-              <label for="todoCheck">{{ todo.text }}</label>
+              <span>
+                <input type="checkbox" v-bind:value="{ done: todo.text }" v-on:change="changeStateTodo(todo)" >
+                <label for="todoCheck">{{ todo.text }}</label>
+              </span>
             </li>
           </ul>
-          <span> <input v-model="newTodo" placeholder="Add new todo" /></span>
-          <span>{{ newTodo }}</span> <span><input type="button" value="submit"></span>
+          <span class="newTodo"><input v-model="newTodo" placeholder="Add new todo"></span>
+          <span class="newTodo">{{ newTodo }}<input type="button" value="submit"></span>
+
         </div>
-        <div id="trello" class="box col-xs-5">
+        <div id="trello" class="box col-xs-6">
           <!-- Trello boards placeholder -->
           <p>
             This is just a trello placeholder!
