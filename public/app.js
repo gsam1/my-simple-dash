@@ -16,10 +16,10 @@ var app = new Vue({
   },
   // Computed properties
   computed: {
-    completedTodos: function() {
+    unfinishedTodos: function() {
       var count = 0;
       this.todos.forEach(function(todo){
-        if (todo.done == true) {
+        if (todo.done == false) {
           count += 1;
         }
       })
@@ -53,6 +53,22 @@ var app = new Vue({
       axios.put('/api/todos/' + todo._id, { done: todo.done })
         .then ( function (response) {
           console.log(response);
+        })
+        .catch( function (error) {
+          console.log(error);
+        })
+    },
+    addNewTodo: function () {
+      var self = this;
+      var input = {
+        text: self.newTodo,
+        done: false
+      };
+      axios.post('/api/todos', input)
+        .then( function (response) {
+          console.log(response);
+          self.netTodo = '';
+          self.todos = response.data;
         })
         .catch( function (error) {
           console.log(error);

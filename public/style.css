@@ -1,3 +1,27 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+/*Button classes*/
+.submit-button {
+  background-color: #41c93c;
+  border: none;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.delete-button {
+  background-color: #e01818;
+  border: none;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px
+}
+
+/*Grid styling*/
 .box {
   background-color: #ff8263;
   margin: 8px;
