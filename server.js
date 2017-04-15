@@ -23,7 +23,8 @@ app.use(morgan('dev'));
 // Thy mongoose
 mongoose.connect(config);
 // Let's define the model for the To-Do App.
-// Since the todo app is persistent, the data is saved to a mongo db instance running on my local network
+// Since the todo app is persistent, the data is saved to a mongo db instance
+// running on my local network
 // Probably will have more of that as well
 
 var Todo = mongoose.model('Todo', {
