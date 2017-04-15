@@ -26,6 +26,7 @@ mongoose.connect(config);
 // Since the todo app is persistent, the data is saved to a mongo db instance
 // running on my local network
 // Probably will have more of that as well
+//
 
 var Todo = mongoose.model('Todo', {
     text: String,
