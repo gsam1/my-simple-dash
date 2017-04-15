@@ -4,7 +4,9 @@
   "description": "A simple dashboard web app for internal use",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "local": "node server.js localdev",
+    "stage": "node server.js devsrv"
   },
   "repository": {
     "type": "git",

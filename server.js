@@ -4,11 +4,12 @@ var app         = express();
 var fs          = require('fs');
 var bodyParser  = require('body-parser');
 var mongoose    = require('mongoose'); // because its easier
-var morgan      = require('morgan')
+var morgan      = require('morgan');
+var process     = require('process');
+var envset      = require('./envset.js');
 
-
-var config = JSON.parse(fs.readFileSync('./config/config.json')); // <- See example_config.json
-
+// the purpose of the envset simple module is to specify which database to use
+var config = envset(process.argv[2]);
 // Open the gates!
 var port = 8000;
 // Do the body parser thing - it encodes the text as URL encoded data.
@@ -18,7 +19,7 @@ app.use(bodyParser.json());
 // Log stuff with morgan!
 app.use(morgan('dev'));
 // Thy mongoose
-mongoose.connect(config.dbConnect);
+mongoose.connect(config);
 // Let's define the model for the To-Do App.
 // Since the todo app is persistent, the data is saved to a mongo db instance running on my local network
 // Probably will have more of that as well

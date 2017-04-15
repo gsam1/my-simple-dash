@@ -1,3 +1,6 @@
 {
-    "dbConnect":"mongodb://192.168.1.62:27017/todos"
+    "dbConnect": {
+      "devsrv" : "mongodb://localhost:27017/todos",
+      "localdev" : "mongodb://localhost:27017/todos"
+      }
 }
