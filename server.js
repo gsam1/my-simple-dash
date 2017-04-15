@@ -8,7 +8,9 @@ var morgan      = require('morgan');
 var process     = require('process');
 var envset      = require('./envset.js');
 
-// the purpose of the envset simple module is to specify which database to use
+// The purpose of the envset simple module is to specify which database to use
+// I use two databases - local - on my laptop and the other on my private server
+// Probably will change the envset to include a production version as well.
 var config = envset(process.argv[2]);
 // Open the gates!
 var port = 8000;

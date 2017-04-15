@@ -9,6 +9,9 @@ module.exports = function(source) {
   } else if (source == 'stage') {
     // Run with the staging if specificied
     return cfg.dbConnect.devsrv;
+  } else if {
+    // Not really neccessary for my case, but fun to do anyway
+    return cfg.dbConnect.production;
   } else {
     // in general run with the local srv
     return cfg.dbConnect.localdev;
